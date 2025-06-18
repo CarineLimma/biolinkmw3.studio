@@ -1,0 +1,164 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Chiron+Sung+HK&display=swap');
+
+:root {
+  --cor0: #0D0D0D;
+  --cor1: #121326;
+  --cor2: #352559;
+  --cor3: #8D33A6;
+  --cor4: #9305F2;
+  --cor5: #F250A9;
+
+  --font-family: 'Chiron Sung HK', sans-serif;
+  --font-padrao: Arial, Helvetica, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fundo animado (canvas de partículas) */
+#background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2; /* fica atrás de tudo */
+  pointer-events: none;
+  background: black;
+  background-color: black;
+  opacity: 0.9;
+}
+
+/* Imagem de fundo clara */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url('logomarca.png');
+  background-color: rgb(0, 0, 0); /* fundo escurecido */
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: auto;
+  background-attachment: fixed;
+  opacity: 0.20; /* controla clareza da imagem */
+  z-index: -1; /* entre o canvas e o conteúdo */
+}
+
+.imagem-responsiva {
+  width: 100%;
+  height: auto;
+  display: block;
+}/* Corpo do site */
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.945); /* fundo escurecido para contraste */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-family);
+  color: white;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Container principal */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  flex-direction: column;
+  margin-bottom: 80px; /* espaço para o footer fixo */
+}
+
+/* Card com sombra */
+.card {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #8D33A6;
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+/* Layout horizontal opcional */
+.horizontal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Seção de perfil */
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  border: 3px solid #b354cead;
+  background: #352559(0, 0, 0, 0.7);
+  b
+}
+
+/* Links */
+.links a {
+  display: block;
+  margin: 10px auto;
+  padding: 12px;
+  background-color: #c662e2;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+  width: 90%;
+  max-width: 400px;
+  transition: background 0.3s;
+  box-shadow: 0 4px 20px #352559(0,0,0,0.6);
+}
+
+.links a:hover {
+  background-color: #9305F2;
+  color: #fff;
+  box-shadow: 0 4px 10px #352559(147, 5, 242, 0.3);
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+/* Rodapé fixo */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 10px;
+  font-size: 0.9rem;
+  color: #fff;
+  text-align: center;
+  opacity: 0.8;
+  background-color: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 -4px 10px rgba(141, 51, 166, 0.26);
+  border-top: 1px solid #8D33A6;
+  z-index: 10;
+}
+
+footer a {
+  color: #8D
